@@ -1,0 +1,99 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+// ///****** Style Star Rating Widget *****
+.rating { 
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; }
+.rating > label:before { 
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before { 
+    content: "\f089";
+    font-size: 1.25em;
+    position: absolute;
+}
+
+.rating > label { 
+    color: #ddd; 
+    float: right; 
+}
+
+.rating > a {
+    margin: 5px;
+    font-size: 1.25em;
+    display: inline-block;
+    text-decoration: none;
+    color: red;
+}
+
+///***** CSS Magic to Highlight Stars on Hover *****
+
+.rating > input:checked ~ label { color: #ffcc00; } ///* show gold star when clicked *
+.rating:not(:checked) > label:hover, ///* hover current star *
+.rating:not(:checked) > label:hover ~ label { color: #ffcc00;  } ///* hover previous stars in list *
+
+.rating > input:checked + label:hover, ///* hover current star when changing rating *
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, ///* lighten current selection *
+.rating > input:checked ~ label:hover ~ label { color: #FFED85 } ///* green*
+
+
+// ===+++====
+/****** Style Star Rating Widget *****/
+.rating { 
+    border: none;
+    float: left;
+}
+.rating > input { display: none; }
+.rating > a {
+    margin: 5px;
+    font-size: 1.25em;
+    display: inline-block;
+    text-decoration: none;
+    color: red;
+}
+
+.rating > div { 
+    border: none;
+    float: left;
+}
+
+.rating > div > input { display: none; }
+.rating > div > label:before { 
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > div > .half:before { 
+    content: "\f089";
+    font-size: 1.25em;
+    position: absolute;
+}
+
+.rating > div > label { 
+    color: #ddd; 
+    float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > div > input:checked ~ label { color: #ffcc00; } /* show gold star when clicked */
+.rating:not(:checked) > div > label:hover, /* hover current star */
+.rating:not(:checked) > div > label:hover ~ label { color: #ffcc00;  } /* hover previous stars in list */
+
+.rating > div > input:checked + label:hover, /* hover current star when changing rating */
+.rating > div > input:checked ~ label:hover,
+.rating > div > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > div > input:checked ~ label:hover ~ label { color: #FFED85 } /* green*/

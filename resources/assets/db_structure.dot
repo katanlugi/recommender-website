@@ -1,0 +1,161 @@
+graph "Database Structure" {
+    // graph [splines=curved, nodesep=1]
+    graph [dpi=300];
+    // graph [dpi=300, splines=ortho, nodesep=1];
+	label = "ER Diagram: mahout_testing";
+	// labelloc = t;
+	// compound = true;
+	node [ shape = record ];
+	fontname = "Helvetica";
+	// ranksep = 1.25;
+	// ratio = 0.7;
+	// rankdir = LR;
+	subgraph "table_combined_ratings" {
+		node [ shape = "plaintext" ];
+		"combined_ratings" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">combined_ratings</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="movie_id">movie_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="rating_sum">rating_sum:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="number_of_ratings">number_of_ratings:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="average_rating">average_rating:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">DOUBLE</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_genre_movie" {
+		node [ shape = "plaintext" ];
+		"genre_movie" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">genre_movie</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="movie_id">movie_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="genre_id">genre_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	subgraph "table_genres" {
+		node [ shape = "plaintext" ];
+		"genres" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">genres</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="name">name:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_links" {
+		node [ shape = "plaintext" ];
+		"links" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">links</TD></TR>
+			<TR><TD COLSPAN="3" PORT="movie_id">movie_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="imdb_id">imdb_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="tmdb_id">tmdb_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_movies" {
+		node [ shape = "plaintext" ];
+		"movies" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">movies</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="title">title:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="adult">adult:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="budget">budget:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="release_date">release_date:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">DATE</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="revenue">revenue:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="runtime">runtime:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">SMALLINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="tagline">tagline:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TEXT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="original_language">original_language:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="original_title">original_title:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="overview">overview:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TEXT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="poster_path">poster_path:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="homepage">homepage:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TEXT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="backdrop_path">backdrop_path:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	subgraph "table_movies_not_found" {
+		node [ shape = "plaintext" ];
+		"movies_not_found" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">movies_not_found</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="movie_id">movie_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_ratings" {
+		node [ shape = "plaintext" ];
+		"ratings" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">ratings</TD></TR>
+			<TR><TD COLSPAN="3" PORT="user_id">user_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="movie_id">movie_id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="rating">rating:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">DOUBLE</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_recommender_preferences" {
+		node [ shape = "plaintext" ];
+		"recommender_preferences" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">recommender_preferences</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="force_train">force_train:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="evaluate_model">evaluate_model:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="implicit_pref">implicit_pref:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="set_non_negative">set_non_negative:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="save">save:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TINYINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="num_iterations">num_iterations:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="num_features">num_features:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">INT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+	
+	subgraph "table_users" {
+		node [ shape = "plaintext" ];
+		"users" [ label=<
+			<TABLE BORDER="0" CELLSPACING="0" CELLBORDER="1">
+			<TR><TD COLSPAN="3" BGCOLOR="#DDDDDD">users</TD></TR>
+			<TR><TD COLSPAN="3" PORT="id">id:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">BIGINT</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="username">username:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="name">name:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="email">email:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="password">password:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="remember_token">remember_token:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">VARCHAR</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="created_at">created_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			<TR><TD COLSPAN="3" PORT="updated_at">updated_at:<FONT FACE="Helvetica-Oblique" POINT-SIZE="10">TIMESTAMP</FONT></TD></TR>
+			</TABLE>>
+		];
+	}
+
+    combined_ratings:movie_id -- movies:id;
+    genres:id -- genre_movie:genre_id;
+    genre_movie:movie_id -- movies:id;
+    links:movie_id -- movies:id;
+    movies:id -- movies_not_found:movie_id;
+    ratings:movie_id -- movies:id;
+    ratings:user_id -- users:id;
+}

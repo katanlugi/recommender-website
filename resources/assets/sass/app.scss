@@ -1,0 +1,116 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+// @import "ratings";
+@import "microsoftSpinner";
+@import "movieCard";
+@import "movieFull";
+@import "search";
+
+// * {
+//     outline: 1px solid red;
+// }
+body {
+    overflow-x: hidden;
+}
+
+.search {
+    width: 175px;
+}
+
+.inline {
+    display: inline-block;
+    + .inline {
+        margin-left: 10px;
+    }
+}
+
+// .inline + .inline {
+//     margin-left: 10px;
+// }
+
+.radio {
+    color: #999;
+    font-size: 15px;
+    position: relative;
+
+    span {
+        position: relative;
+        padding-left: 20px;
+    }
+
+    span:after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border: 3px solid;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        border-radius: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+    input[type="radio"]:checked + span:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        background: #0B8;
+        left: 5px;
+        top: 6px;
+        border-radius: 100%;
+
+    }
+}
+
+.movies-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: hidden;
+}
+
+.movie-item {
+    margin-bottom: 20px;
+    flex: none;
+    width: 240px;
+    max-width: 320px;
+    // max-height: 670px;
+    display: block;
+    box-shadow: 0 0 15px #888;
+    background-color: #1e1a26;
+}
+
+.page-header-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    
+    div {
+        margin: 10px;
+        text-align: center;
+    }
+}
